@@ -29,4 +29,11 @@ public class IntakeController {
          intakeRepository.save(thing);
          return intakeRepository.findAll();
     }
+
+    @RequestMapping(value = "/intake/{id}", method = RequestMethod.GET)
+    @CrossOrigin
+    public Intake createIntake(@PathVariable int id, @RequestBody Intake thing) {
+        intakeRepository.save(thing);
+        return intakeRepository.findById(id).orElse(null);
+    }
 }

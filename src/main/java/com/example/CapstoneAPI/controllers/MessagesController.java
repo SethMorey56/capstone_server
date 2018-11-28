@@ -5,6 +5,8 @@ import com.example.CapstoneAPI.respository.MessagesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
+
 @RestController
 public class MessagesController {
 
@@ -24,6 +26,8 @@ public class MessagesController {
     @RequestMapping(value = "/messages", method = RequestMethod.POST)
     @CrossOrigin
     public Iterable<Messages> createMessages(@RequestBody Messages thing) {
+        System.out.println("userId" + thing.getUserId());
+        thing.setCreated_at(LocalDateTime.now());
         messagesRepository.save(thing);
         return messagesRepository.findAll();
     }
