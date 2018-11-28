@@ -32,8 +32,7 @@ public class IntakeController {
 
     @RequestMapping(value = "/intake/{id}", method = RequestMethod.GET)
     @CrossOrigin
-    public Intake createIntake(@PathVariable int id, @RequestBody Intake thing) {
-        intakeRepository.save(thing);
+    public Intake createIntake(@PathVariable int id) {
         return intakeRepository.findById(id).orElse(null);
     }
 }

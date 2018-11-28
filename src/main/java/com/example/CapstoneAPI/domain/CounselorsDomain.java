@@ -15,6 +15,8 @@ public class CounselorsDomain {
     private String name;
     private String email;
     private String password;
+    private String img;
+    private String about;
 
     public Integer getId() {
         return id;
@@ -44,7 +46,21 @@ public class CounselorsDomain {
         return password;
     }
 
-    public void setPassword() {
-        this.password = password;
+    public void setPassword() { this.password = password; }
+    
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+    public String getAbout() {
+        return about;
+    }
+
+    public void setAbout(String about) {
+        this.about = about;
     }
 }
